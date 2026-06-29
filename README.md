@@ -23,6 +23,13 @@ Current local browser benchmark:
 
 This is an apples-to-apples benchmark inside Lenslet's own browser runner, not a claim about any private browser-agent implementation.
 
+How it fits with Codex:
+
+- Codex remains the planner and reviewer.
+- Lenslet is an external browser runner Codex can call for browser-reachable tasks.
+- Lenslet captures, compresses, executes guarded actions, and writes traces.
+- The benchmark compares Codex planning over compact Lenslet frames versus raw graph frames inside the same runner.
+
 ## What We Care About
 
 - **Measurable agent systems:** every claim should have a trace, eval, benchmark, or direct artifact behind it.
