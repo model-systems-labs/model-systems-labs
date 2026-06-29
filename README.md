@@ -30,16 +30,14 @@ This is an apples-to-apples benchmark inside Lenslet's own browser runner, not a
 - **Safety at the executor boundary:** planner actions are suggestions; the runner still blocks credentials, checkout, payment, booking, and incompatible field actions by default.
 - **Small primitives over big theater:** capture, normalize, route, plan, execute, diff, repeat.
 
-## Shape Of The Stack
+## System Loop
 
-```text
-browser state
-  -> full UI graph
-  -> task-aware router
-  -> compact planner frame
-  -> typed planner action
-  -> guarded executor
-  -> recapture + trace
+```mermaid
+flowchart LR
+  A["Capture<br/>full UI state"] --> B["Compact<br/>task signal"]
+  B --> C["Act<br/>through guards"]
+  C --> D["Trace<br/>measure outcome"]
+  D --> A
 ```
 
 ## Status
